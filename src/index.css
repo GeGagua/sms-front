@@ -12,10 +12,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-size: 16px;
   color: #172B4D;
-  background-color: #FFFFFF;
+  background: #f7f8f9;
   font-style: normal;
   font-weight: 400;
   line-height: 24px;
+  padding: 0;
+  transition: all 0.3s ease-in-out;
 }
 
 code {
@@ -26,4 +28,13 @@ code {
 
 p {
   margin: 0;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(9, 30, 66, 0.31);
+  border-radius: 16px; 
 }

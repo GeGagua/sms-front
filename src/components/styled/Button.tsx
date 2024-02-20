@@ -7,22 +7,24 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const StyledButton = styled.button<ButtonProps>`
-  color: #fff;
-  font-size: 24px;
+  color: #172B4D;
+  font-size: 16px;
   font-style: normal;
   font-weight: 400;
-  line-height: 32px;
+  line-height: 24px;
   border: 0;
   outline: 0;
-  background: #56668d;
+  background: #FFC52C;
   border-radius: 8px;
-  padding: 24px 60px;
+  padding: 12px 60px;
   cursor: pointer;
-  margin-top: 40px;
-  transition: all 0.3s eas-in-out;
+  width: 100%;
+  max-width: 400px;
+  transition: all 0.3s easy-in-out;
 
   &:hover {
     background: #445170;
+    color: #fff;
   }
 
   ${({ small }) =>

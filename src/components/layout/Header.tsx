@@ -1,29 +1,25 @@
-import styled from "styled-components"
-import Logo from '../../assets/img/logo.png'
-import { Link } from "react-router-dom"
-import { Container } from "../styled/Global"
+import styled from "styled-components";
+import Logo from "../../assets/img/logo.svg";
+import { Link } from "react-router-dom";
 
 const HeaderContainer = styled.header`
-    padding: 24px 0;
-    height: 64px;
-    background: #34383E;
+  height: 56px;
 
-    img {
-        height: 56px;
-        margin-top: 4px;
-    }
-`
+  img {
+    height: 32px;
+    margin: 0 auto;
+    display: block;
+  }
+`;
 
 const Header = () => {
-    return (
-        <HeaderContainer>
-            <Container>
-                <Link to={'/'}>
-                    <img src={Logo} alt="Tegeta Leasing" />
-                </Link>
-            </Container>
-        </HeaderContainer>
-    )
-}
+  return (
+    <HeaderContainer>
+      <Link to={"/"}>
+        <img src={Logo} alt="Tegeta Leasing" />
+      </Link>
+    </HeaderContainer>
+  );
+};
 
-export default Header
+export default Header;

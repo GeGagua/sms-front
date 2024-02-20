@@ -1,34 +1,34 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
-  margin-left: auto;
-  margin-right: auto;
-  width: 94%;
-  max-width: 1120px;
+export const TwoPartsContainer = styled.div`
+  display: flex;
+  height: 100dvh;
+  align-items: center;
+  justify-content: center;
 `;
 
-export const Main = styled.main`
+export const Container = styled.div`
+  flex: 3;
+  height: calc(100dvh - 112px);
+  padding: 56px 0;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  text-align: center;
-  padding: 80px 0;
-  height: calc(100dvh - 112px - 160px);
-  overflow: auto;
+  background: #ffffff;
 `;
+
+export const Main = styled.main``;
 
 export const AppBody = styled.div``;
 
 export const Title = styled.h1`
-  color: #172b4d;
-  text-align: center;
-  font-family: FiraGO;
-  font-size: 32px;
+  font-family: "FiraGO";
+  font-size: 24px;
   font-style: normal;
-  font-weight: 500;
-  line-height: 40px;
-  margin: 0 0 16px 0;
+  font-weight: 700;
+  line-height: 32px;
+  margin: 0 0 8px 0;
 `;
 
 export const SubTitle = styled.h2`
@@ -58,4 +58,20 @@ export const Small = styled.p`
   font-style: normal;
   font-weight: 400;
   line-height: 22px;
+`;
+
+export const StandardDiv = styled.div`
+  width: 100%;
+  max-width: 400px;
+`;
+
+export const Center = styled.div`
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  width: 100dvw;
+  flex-direction: column;
+  justify-content: space-between;
+  height: calc(100dvh - 112px);
+  padding: 56px 0;
 `;

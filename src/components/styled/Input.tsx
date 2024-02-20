@@ -2,7 +2,7 @@ import { FC } from "react";
 import styled from "styled-components";
 
 const InputContainer = styled.div`
-  margin: 24px 0;
+  margin: 16px 0;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -18,22 +18,22 @@ const InputContainer = styled.div`
   input {
     width: 100%;
     font-size: 16px;
-    max-width: 400px;
+    max-width: 378px;
     border-radius: 8px;
     border: 1px solid rgba(9, 30, 66, 0.14);
     background: #fff;
-    height: 58px;
-    color: #44546f;
+    height: 54px;
+    color: #44546F;
     padding: 0 12px;
   }
 
   ::placeholder {
-    color: #44546f;
+    color: #44546F;
     opacity: 1;
   }
 
   ::-ms-input-placeholder {
-    color: #44546f;
+    color: #44546F;
   }
 
   input::-webkit-outer-spin-button,
