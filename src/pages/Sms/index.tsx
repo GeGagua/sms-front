@@ -12,7 +12,7 @@ import Sidebar from "../../components/layout/Sidebar";
 import Input from "../../components/styled/Input";
 import { useState } from "react";
 
-const Homepage = () => {
+const SMS = () => {
   const navigate = useNavigate();
   const [value, setValue] = useState<number | string>("");
 
@@ -21,21 +21,22 @@ const Homepage = () => {
       <Container>
         <Header />
         <StandardDiv>
-          <Title>გაიარე იდენტიფიკაცია</Title>
-          <p>შენზე მორგებული შეთავაზებების მისაღებად</p>
+          <Title>ტელეფონზე მიღებული კოდი</Title>
+          <p>კოდი 555****67-ზე გამოგიგზავნეთ</p>
           <Input
             label=""
+            newCode
             value={value}
             onChange={(e) => setValue(e)}
-            placeholder="პირადი ნომერი"
+            placeholder="SMS კოდი"
           />
-          <Button onClick={() => navigate("mobile")}>დაწყება</Button>
+          <Button onClick={() => navigate("/companies")}>გაგრძელება</Button>
         </StandardDiv>
-        <Footer active={1} />
+        <Footer active={4} />
       </Container>
       <Sidebar />
     </TwoPartsContainer>
   );
 };
 
-export default Homepage;
+export default SMS;

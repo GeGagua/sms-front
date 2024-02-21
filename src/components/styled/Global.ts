@@ -75,3 +75,13 @@ export const Center = styled.div`
   height: calc(100dvh - 112px);
   padding: 56px 0;
 `;
+
+export const CompaniesContainer = styled.div`
+  width: calc(100% - 112px);
+  text-align: center;
+
+  & > div {
+    width: auto;
+    min-height: 45vh;
+  }
+`;

@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import Footer from "../../components/layout/Footer";
 import Header from "../../components/layout/Header";
 import Button from "../../components/styled/Button";
@@ -5,6 +6,7 @@ import { Center, Title } from "../../components/styled/Global";
 import { EndContainer, EndContainerBlock, EndContainerBox } from "./styled";
 
 const EndStep3 = () => {
+  const navigate = useNavigate()
   return (
     <Center>
       <Header />
@@ -23,11 +25,11 @@ const EndStep3 = () => {
               და გთხოვთ, დაეცნოთ და დაეთანხმოთ მას. 
             </p>
           </EndContainerBox>
-          <Button>ვადასტურებ</Button>
+          <Button onClick={() => navigate("/success")}>ვადასტურებ</Button>
         </EndContainerBlock>
       </EndContainer>
       <EndContainerBlock>
-        <Footer fullWidth active={7} />
+        <Footer fullWidth active={8} />
       </EndContainerBlock>
     </Center>
   );
