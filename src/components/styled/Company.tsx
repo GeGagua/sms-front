@@ -14,7 +14,7 @@ const CompanyContainer = styled.div`
   text-align: left;
 
   h2 {
-    color: #172B4D;
+    color: #172b4d;
     font-size: 16px;
     font-style: normal;
     font-weight: 700;
@@ -27,7 +27,7 @@ const CompanyContainer = styled.div`
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
-    color: #44546F;
+    color: #44546f;
     line-height: 22px;
   }
 
@@ -39,6 +39,46 @@ const CompanyContainer = styled.div`
 
   .checkbox {
     margin-left: auto;
+  }
+
+  /* Hide the default checkbox */
+  .custom-checkbox input {
+    display: none;
+  }
+
+  /* Create a custom checkbox */
+  .custom-checkbox .checkmark {
+    position: relative;
+    height: 24px;
+    width: 24px;
+    background-color: #ff9602;
+    display: inline-block;
+    border-radius: 4px; /* Optional: for rounded corners */
+  }
+
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .custom-checkbox .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+
+  /* Show the checkmark when checked */
+  .custom-checkbox input:checked + .checkmark:after {
+    display: block;
+  }
+
+  /* Style the checkmark/indicator */
+  .custom-checkbox .checkmark:after {
+    left: 8px;
+    top: 4px;
+    width: 5px;
+    height: 10px;
+    border: solid #fff;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
   }
 `;
 
@@ -61,7 +101,10 @@ const Company: FC<ICompany> = ({ number, title, address, logo }) => {
         <p>{address}</p>
       </div>
       <div className="checkbox">
-        <input type="checkbox" />
+        <label className="custom-checkbox">
+          <input checked type="checkbox" />
+          <span className="checkmark"></span>
+        </label>
       </div>
     </CompanyContainer>
   );
