@@ -8,6 +8,10 @@ export const EndContainerBlock = styled.div`
   margin-right: auto;
   width: 100%;
   text-align: center;
+
+  @media (max-width: 992px) {
+    margin-bottom: 3vh;
+  }
 `;
 
 export const EndContainerBox = styled.div`
@@ -23,5 +27,15 @@ export const EndContainerBox = styled.div`
 
     p {
         margin-bottom: 16px;
+    }
+
+    @media (max-width: 992px) {
+      max-height: 52vh;
+      width: auto;
+      margin: 0 16px;
+      padding: 0;
+      border: 0;
+      margin-top: 24px;
+      margin-bottom: 24px;
     }
 `;

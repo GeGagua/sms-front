@@ -3,17 +3,16 @@ import Header from "../../components/layout/Header";
 import { Center, Title } from "../../components/styled/Global";
 
 const SuccessContainer = styled.div`
-margin-bottom: auto;
-margin-top: auto;
-text-align: center;
-`
+  margin-bottom: auto;
+  margin-top: auto;
+  text-align: center;
+`;
 
 const Success = () => {
   return (
     <Center>
       <Header />
       <SuccessContainer>
-        
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="148"

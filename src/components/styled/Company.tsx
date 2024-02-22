@@ -80,6 +80,22 @@ const CompanyContainer = styled.div`
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
   }
+
+  @media (max-width: 992px) {
+    display: block;
+    position: relative;
+
+    img {
+      width: 56px;
+      height: 56px;
+    }
+
+    .checkbox {
+      position: absolute;
+      right: 12px;
+      top: 24px;
+    }
+  }
 `;
 
 export interface ICompany {

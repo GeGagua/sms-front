@@ -1,6 +1,33 @@
-const BackButton = () => {
+import { FC } from "react";
+import styled from "styled-components";
+
+interface IProps {
+  onClick: () => void;
+}
+
+const BackButtonContainer = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 64px;
+  height: 64px;
+  background: #f7f8f9;
+  border-radius: 50%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  @media (max-width: 992px) {
+    width: 32px;
+    height: 32px;
+  }
+`;
+
+const BackButton: FC<IProps> = ({ onClick }) => {
   return (
-    <span>
+    <BackButtonContainer onClick={() => onClick()}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="32"
@@ -13,8 +40,8 @@ const BackButton = () => {
           fill="#44546F"
         />
       </svg>
-    </span>
+    </BackButtonContainer>
   );
 };
 
-export default BackButton
+export default BackButton;

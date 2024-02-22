@@ -81,12 +81,6 @@ const InputContainer = styled.div`
       cursor: pointer;
     }
   }
-
-  @media (max-width: 992px) {
-    input {
-      max-width: 80vw;
-    }
-  }
 `;
 
 interface IProps {

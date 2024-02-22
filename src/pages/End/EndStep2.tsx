@@ -2,11 +2,11 @@ import { useNavigate } from "react-router-dom";
 import Footer from "../../components/layout/Footer";
 import Header from "../../components/layout/Header";
 import Button from "../../components/styled/Button";
-import { Center, Title } from "../../components/styled/Global";
+import { Center, Flex, Title } from "../../components/styled/Global";
 import { EndContainer, EndContainerBlock, EndContainerBox } from "./styled";
 
 const EndStep2 = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   return (
     <Center>
       <Header />
@@ -69,7 +69,10 @@ const EndStep2 = () => {
               დამუშავება.
             </p>
           </EndContainerBox>
-          <Button onClick={() => navigate("/endstep3")}>ვადასტურებ</Button>
+          <Flex className="full-mobile">
+            <Button light onClick={() => navigate("/success")}>გამოტოვება</Button>
+            <Button onClick={() => navigate("/success")}>ვადასტურებ</Button>
+          </Flex>
         </EndContainerBlock>
       </EndContainer>
       <EndContainerBlock>

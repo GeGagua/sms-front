@@ -9,6 +9,11 @@ const SidebarContainer = styled.div`
   background: #f7f8f9;
   padding: 0 88px;
 
+  @media (max-width: 992px) {
+    padding: 18px;
+    font-size: 14px;
+  }
+
   p {
     margin-bottom: 16px;
   }
