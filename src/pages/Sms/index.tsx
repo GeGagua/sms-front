@@ -61,7 +61,7 @@ const SMS = () => {
         )
         .then(() => {
           localStorage.setItem('sms-id', id)
-          navigate("/companies");
+          navigate("/email");
         })
         .catch(() => {
           toast("არასწორია, გთხოვთ შეიყვანოთ სწორი OTP", {

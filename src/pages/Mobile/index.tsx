@@ -20,7 +20,7 @@ const Mobile = () => {
   const validate = () => {
     if (value && `${value}`.length === 9) {
       localStorage.setItem("sms-phone", `${value}`);
-      navigate("/email")
+      navigate("/sms")
     } else {
       toast("გთხოვთ შეიყვანეთ სწორი ტელეფონის ნომერი", {
         type: "error",

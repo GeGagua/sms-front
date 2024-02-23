@@ -18,7 +18,7 @@ const Email = () => {
 
   const validate = () => {
     localStorage.setItem('sms-email', `${value}`)
-    navigate("/sms");
+    navigate("/companies");
   };
 
   return (
@@ -30,6 +30,7 @@ const Email = () => {
           <p>გაიგეთ ბოლო სიახლეები პირველმა (ნებაყოფლობით შესავსები ველი)</p>
           <Input
             label=""
+            type="text"
             value={value}
             onChange={(e) => setValue(e)}
             placeholder="ელ. ფოსტის მისამართი"

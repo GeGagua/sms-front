@@ -25,26 +25,31 @@ const InputContainer = styled.div`
     height: 54px;
     color: #44546f;
     padding: 0 12px;
+    font-family: 'FiraGO';
   }
 
   ::placeholder {
     color: #44546f;
     opacity: 1;
+    font-family: 'FiraGO';
   }
 
   ::-ms-input-placeholder {
     color: #44546f;
+    font-family: 'FiraGO';
   }
 
   input::-webkit-outer-spin-button,
   input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
+    font-family: 'FiraGO';
   }
 
   /* For Firefox */
   input[type="number"] {
     -moz-appearance: textfield;
+    font-family: 'FiraGO';
   }
 
   &.isMobile {
@@ -88,6 +93,7 @@ interface IProps {
   value: string | number;
   isMobile?: boolean;
   newCode?: boolean;
+  type?: string;
   onSmSCLick?: () => void;
   onChange: (val: string | number) => void;
 }
@@ -96,6 +102,7 @@ const Input: FC<IProps> = ({
   isMobile,
   placeholder,
   value,
+  type,
   onChange,
   onSmSCLick,
   newCode,
@@ -126,7 +133,7 @@ const Input: FC<IProps> = ({
         value={value}
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
-        type="number"
+        type={type ? type : "number"}
       />
     </InputContainer>
   );
