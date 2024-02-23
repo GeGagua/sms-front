@@ -15,10 +15,40 @@ import Company, { ICompany } from "../../components/styled/Company";
 import axios from "axios";
 import { BackUrl } from "../../const";
 
+import Toyota from '../../assets/img/toyota.svg'
+import Avtogallery from '../../assets/img/avtogallery.svg'
+import Approved from '../../assets/img/approved.svg'
+import avtomotivi from '../../assets/img/avtomotivi.svg'
+import sairme from '../../assets/img/sairme.svg'
+import Rent from '../../assets/img/eurocars.svg'
+
 const Companies = () => {
   const navigate = useNavigate();
   const [data, setData] = useState<ICompany[]>([]);
   const [companiesId, setCompaniesIds] = useState<string[]>([])
+
+  const setIcon = (name: string) => {
+    if (name.includes('საირმე')) {
+      return sairme
+    }
+    if (name.includes('ეფრუვდ')) {
+      return Approved
+    }
+    if (name.includes('ავტომოტივი')) {
+      return avtomotivi
+    }
+    if (name.includes('გალერი')) {
+      return Avtogallery
+    }
+    if (name.includes('რენთი')) {
+      return Rent
+    }
+    
+    if (name.includes('თი-ბი-ეი') || name.includes('ტოიოტა')) {
+      return Toyota
+    }
+    return CompanyLogo
+  }
 
   useEffect(() => {
     axios.get(`${BackUrl}/companies`).then((res) => {
@@ -26,7 +56,7 @@ const Companies = () => {
         item.title = item.name;
         item.id = item.companyId;
         item.number = "ს/ნ: " + item.companyId;
-        item.logo = CompanyLogo;
+        item.logo = setIcon(item.name);
         return item;
       })
 
