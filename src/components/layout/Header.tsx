@@ -7,6 +7,7 @@ const HeaderContainer = styled.header`
   height: 56px;
   position: relative;
   width: 100%;
+  min-height: 56px;
   max-width: 1048px;
   margin: 0 auto;
 
@@ -18,6 +19,7 @@ const HeaderContainer = styled.header`
 
   @media (max-width: 992px) {
     height: 32px;
+    min-height: 32px;
     img {
       height: 16px;
     }

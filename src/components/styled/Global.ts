@@ -121,7 +121,9 @@ export const Center = styled.div`
 
 export const CompaniesContainer = styled.div`
   width: calc(100% - 112px);
+  max-width: 1024px;
   text-align: center;
+  margin-bottom: 24px;
 
   & > div {
     width: auto;

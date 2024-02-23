@@ -1,1 +1,1 @@
-export const BackUrl = 'http://10.11.11.36:3050'
+export const BackUrl = 'https://api-gateway.tegetamotors.ge/sms/v1'
