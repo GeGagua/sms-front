@@ -9,6 +9,7 @@ export const TwoPartsContainer = styled.div`
   @media (max-width: 992px) {
     display: block;
     height: auto;
+    margin: 0 15px;
   }
 `;
 
@@ -24,7 +25,8 @@ export const Container = styled.div`
 
   @media (max-width: 992px) {
     height: auto;
-    min-height: 60vh;
+    min-height: 500px;
+    justify-content: space-around;
   }
 `;
 
