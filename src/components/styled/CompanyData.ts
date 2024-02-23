@@ -135,6 +135,7 @@ export const CompanyContainer = styled.div`
     display: flex;
     margin-top: 12px;
     gap: 16px;
+    flex-wrap: wrap;
 
     img {
       height: 30px;
