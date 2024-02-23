@@ -19,7 +19,7 @@ const StyledButton = styled.button<ButtonProps>`
   padding: 12px 60px;
   cursor: pointer;
   width: 100%;
-  max-width: 400px;
+  max-width: 378px;
   transition: all 0.3s easy-in-out;
 
   &:hover {

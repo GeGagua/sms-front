@@ -52,7 +52,6 @@ const InputContainer = styled.div`
 
     input {
       padding-left: 92px;
-      max-width: 292px;
     }
 
     span {
@@ -71,7 +70,7 @@ const InputContainer = styled.div`
 
     span {
       position: absolute;
-      right: 12px;
+      right: 34px;
       top: 17px;
       color: #D67D00;
       font-size: 16px;
@@ -89,6 +88,7 @@ interface IProps {
   value: string | number;
   isMobile?: boolean;
   newCode?: boolean;
+  onSmSCLick?: () => void;
   onChange: (val: string | number) => void;
 }
 
@@ -97,6 +97,7 @@ const Input: FC<IProps> = ({
   placeholder,
   value,
   onChange,
+  onSmSCLick,
   newCode,
 }) => {
   return (
@@ -105,7 +106,7 @@ const Input: FC<IProps> = ({
     >
       {isMobile && <span>🇬🇪 +995</span>}
       {newCode && (
-        <span>
+        <span onClick={() => onSmSCLick && onSmSCLick()}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"

@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import styled from "styled-components";
 
 const CompanyContainer = styled.div`
@@ -99,13 +99,23 @@ const CompanyContainer = styled.div`
 `;
 
 export interface ICompany {
+  id: string;
   number: string;
   title: string;
   address: string;
   logo: string;
+  onUpdate: (id: string) => void;
 }
 
-const Company: FC<ICompany> = ({ number, title, address, logo }) => {
+const Company: FC<ICompany> = ({
+  number,
+  title,
+  address,
+  logo,
+  onUpdate,
+  id,
+}) => {
+  const [check, setChecked] = useState(true);
   return (
     <CompanyContainer>
       <div>
@@ -118,7 +128,14 @@ const Company: FC<ICompany> = ({ number, title, address, logo }) => {
       </div>
       <div className="checkbox">
         <label className="custom-checkbox">
-          <input checked type="checkbox" />
+          <input
+            onChange={() => {
+              onUpdate(id);
+              setChecked(!check);
+            }}
+            checked={check}
+            type="checkbox"
+          />
           <span className="checkmark"></span>
         </label>
       </div>

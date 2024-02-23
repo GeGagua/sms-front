@@ -12,20 +12,48 @@ import { EndContainerBox } from "../End/styled";
 import { useEffect, useState } from "react";
 import CompanyLogo from "../../assets/img/company.svg";
 import Company, { ICompany } from "../../components/styled/Company";
+import axios from "axios";
+import { BackUrl } from "../../const";
 
 const Companies = () => {
   const navigate = useNavigate();
   const [data, setData] = useState<ICompany[]>([]);
+  const [companiesId, setCompaniesIds] = useState<string[]>([])
 
   useEffect(() => {
-    const one = {
-      number: "ს/ნ: 202177205",
-      title: "შპს „თეგეტა მოტორსი“",
-      address: "ქ. თბილისი, დავით აღმაშენებლის ხეივანი N129",
-      logo: CompanyLogo,
-    };
-    setData(Array(10).fill(one));
+    axios.get(`${BackUrl}/companies`).then((res) => {
+      const data = res?.data?.data.map((item: any) => {
+        item.title = item.name;
+        item.id = item.companyId;
+        item.number = "ს/ნ: " + item.companyId;
+        item.logo = CompanyLogo;
+        return item;
+      })
+
+      const ids = res?.data?.data.map((item: { companyId: any; }) => {
+        return item.companyId;
+      })
+
+      setCompaniesIds(ids)
+      setData(data)
+    })
   }, []);
+
+  const updateCompanies = (id: string) => {
+    let copyIds = companiesId;
+    console.log(id)
+    if (companiesId.includes(id)) {
+      copyIds = copyIds.filter(cid => cid !== id)
+    } else {
+      copyIds.push(id)
+    }
+    setCompaniesIds(copyIds)
+  }
+
+  const save = () => {
+    localStorage.setItem("sms-companies", JSON.stringify(companiesId));
+    navigate("/endstep1")
+  }
 
   return (
     <TwoPartsContainer>
@@ -34,11 +62,11 @@ const Companies = () => {
         <CompaniesContainer>
           <EndContainerBox>
             {data.map((item, index) => (
-              <Company key={index} {...item} />
+              <Company key={index} {...item} onUpdate={(id) => updateCompanies(id)}  />
             ))}
             <div className="shadow"></div>
           </EndContainerBox>
-          <Button onClick={() => navigate("/endstep1")}>გაგრძელება</Button>
+          <Button onClick={() => save()}>გაგრძელება</Button>
         </CompaniesContainer>
         <Footer active={5} />
       </Container>

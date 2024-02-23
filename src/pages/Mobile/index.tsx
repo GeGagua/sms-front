@@ -11,10 +11,22 @@ import Footer from "../../components/layout/Footer";
 import Sidebar from "../../components/layout/Sidebar";
 import Input from "../../components/styled/Input";
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 const Mobile = () => {
   const navigate = useNavigate();
   const [value, setValue] = useState<number | string>("");
+
+  const validate = () => {
+    if (value && `${value}`.length === 9) {
+      localStorage.setItem("sms-phone", `${value}`);
+      navigate("/email")
+    } else {
+      toast("გთხოვთ შეიყვანეთ სწორი ტელეფონის ნომერი", {
+        type: "error",
+      });
+    }
+  };
 
   return (
     <TwoPartsContainer>
@@ -30,7 +42,7 @@ const Mobile = () => {
             onChange={(e) => setValue(e)}
             placeholder="ტელეფონის ნომერი"
           />
-          <Button onClick={() => navigate("/sms")}>გაგრძელება</Button>
+          <Button onClick={() => validate()}>გაგრძელება</Button>
         </StandardDiv>
         <Footer active={2} />
       </Container>

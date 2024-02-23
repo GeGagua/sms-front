@@ -4,9 +4,22 @@ import Header from "../../components/layout/Header";
 import Button from "../../components/styled/Button";
 import { Center, Title } from "../../components/styled/Global";
 import { EndContainer, EndContainerBlock, EndContainerBox } from "./styled";
+import axios from "axios";
+import { BackUrl } from "../../const";
 
 const EndStep1 = () => {
+  const id = localStorage.getItem('sms-id')
+  const companies = JSON.parse(localStorage.getItem("sms-companies") || '');
   const navigate = useNavigate()
+  const agree = () => {
+    axios.put(`${BackUrl}/sms/agreement/${id}`, {
+      companies: companies ? companies : [],
+      email: localStorage.getItem('sms-email') || ''
+    }).then(() => {
+      navigate("/endstep2")
+    })
+  }
+
   return (
     <Center>
       <Header />
@@ -69,7 +82,7 @@ const EndStep1 = () => {
               დამუშავება.
             </p>
           </EndContainerBox>
-          <Button onClick={() => navigate("/endstep2")}>ვადასტურებ</Button>
+          <Button onClick={() => agree()}>ვადასტურებ</Button>
         </EndContainerBlock>
       </EndContainer>
       <EndContainerBlock>

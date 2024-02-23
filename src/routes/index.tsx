@@ -11,6 +11,7 @@ import EndStep2 from '../pages/End/EndStep2'
 import EndStep1 from '../pages/End/EndStep1'
 import SMS from '../pages/Sms'
 import Companies from '../pages/Companies'
+import Email from '../pages/Email'
 
 interface IProps {
   lang?: string
@@ -24,6 +25,7 @@ const Router: FC<IProps> = ({ lang }) => {
         <Route path='/mobile' element={<Mobile />} />
         <Route path='/rules' element={<Rules />} />
         <Route path='/sms' element={<SMS />} />
+        <Route path='/email' element={<Email />} />
         <Route path='/companies' element={<Companies />} />
         <Route path='/form' element={<Form />} />
         <Route path='/endstep3' element={<EndStep3 />} />

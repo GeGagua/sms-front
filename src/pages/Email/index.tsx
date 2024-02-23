@@ -11,21 +11,14 @@ import Footer from "../../components/layout/Footer";
 import Sidebar from "../../components/layout/Sidebar";
 import Input from "../../components/styled/Input";
 import { useState } from "react";
-import { toast } from "react-toastify";
 
-const Homepage = () => {
+const Email = () => {
   const navigate = useNavigate();
   const [value, setValue] = useState<number | string>("");
 
   const validate = () => {
-    if (value && `${value}`.length === 11) {
-      navigate("mobile");
-      localStorage.setItem("sms-pid", `${value}`);
-    } else {
-      toast("გთხოვთ შეიყვანეთ სწორი პირადი ნომერი", {
-        type: "error",
-      });
-    }
+    localStorage.setItem('sms-email', `${value}`)
+    navigate("/sms");
   };
 
   return (
@@ -33,21 +26,21 @@ const Homepage = () => {
       <Container>
         <Header />
         <StandardDiv>
-          <Title>გაიარე იდენტიფიკაცია</Title>
-          <p>შენზე მორგებული შეთავაზებების მისაღებად</p>
+          <Title>შეიყვანეთ ელ. ფოსტა</Title>
+          <p>გაიგეთ ბოლო სიახლეები პირველმა (არარის აუცილებელი)</p>
           <Input
             label=""
             value={value}
             onChange={(e) => setValue(e)}
-            placeholder="პირადი ნომერი"
+            placeholder="ელ. ფოსტის მისამართი"
           />
           <Button onClick={() => validate()}>დაწყება</Button>
         </StandardDiv>
-        <Footer active={1} />
+        <Footer active={3} />
       </Container>
       <Sidebar />
     </TwoPartsContainer>
   );
 };
 
-export default Homepage;
+export default Email;
