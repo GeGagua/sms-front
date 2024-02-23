@@ -31,7 +31,7 @@ const Homepage = () => {
   return (
     <TwoPartsContainer>
       <Container>
-        <Header />
+        <Header hideBack />
         <StandardDiv>
           <Title>გაიარე იდენტიფიკაცია</Title>
           <p>შენზე მორგებული შეთავაზებების მისაღებად</p>

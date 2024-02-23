@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Logo from "../../assets/img/logo.svg";
 import { Link, useNavigate } from "react-router-dom";
 import BackButton from "../styled/BackButton";
+import { FC } from "react";
 
 const HeaderContainer = styled.header`
   height: 56px;
@@ -26,11 +27,15 @@ const HeaderContainer = styled.header`
   }
 `;
 
-const Header = () => {
+interface IProps {
+  hideBack?: boolean
+}
+
+const Header: FC<IProps> = ({ hideBack }) => {
   const navigate = useNavigate();
   return (
     <HeaderContainer>
-      <BackButton onClick={() => navigate(-1)} />
+      {!hideBack && <BackButton onClick={() => navigate(-1)} />}
       <Link to={"/"}>
         <img src={Logo} alt="Tegeta Leasing" />
       </Link>
