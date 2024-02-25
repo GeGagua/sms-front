@@ -10,7 +10,7 @@ export const EndContainerBlock = styled.div`
   text-align: center;
 
   @media (max-width: 992px) {
-    margin-bottom: 3vh;
+    margin-bottom: 2vh;
   }
 `;
 
@@ -30,7 +30,7 @@ export const EndContainerBox = styled.div`
     }
 
     @media (max-width: 992px) {
-      max-height: 52vh;
+      max-height: 47vh;
       width: auto;
       margin: 0 16px;
       padding: 0;

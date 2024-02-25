@@ -9,7 +9,7 @@ import { BackUrl } from "../../const";
 
 const EndStep1 = () => {
   const id = localStorage.getItem("sms-id");
-  const companies = JSON.parse(localStorage.getItem("sms-companies") || "");
+  const companies = localStorage.getItem("sms-companies") ? JSON.parse(localStorage.getItem("sms-companies") || "") : [];
   const navigate = useNavigate();
   const agree = () => {
     axios

@@ -6,6 +6,10 @@ const SuccessContainer = styled.div`
   margin-bottom: auto;
   margin-top: auto;
   text-align: center;
+
+  h1 {
+    margin: 8px;
+  }
 `;
 
 const Success = () => {
@@ -25,11 +29,8 @@ const Success = () => {
             fill="#6A9A23"
           />
         </svg>
-        <Title>თქვენ წარმატებით გაიარეთ</Title>
-        <p>
-          გაცნობებთ, რომ თანხმობის შემთხვევაში თქვენი მონაცემები დამუშავდება
-          პირდაპირი
-        </p>
+        <Title>თქვენ წარმატებით გაიარეთ რეგისტრაცია</Title>
+        <p>მადლობა, რომ ზრუნავთ თქვენს ავტომობილზე</p>
       </SuccessContainer>
     </Center>
   );

@@ -134,8 +134,8 @@ const Footer: FC<IProps> = ({ active, fullWidth }) => {
         </div>
       </section>
       <section>
-        <p>კომპანიები</p>
-        <div className={active === 5 ? "active" : ""}>
+        <p className={active === 5 ? "active" : ""}>კომპანიები</p>
+        <div>
           <span className={active >= 5 ? "active" : ""} />
         </div>
       </section>

@@ -31,21 +31,28 @@ const Company: FC<ICompany> = ({
       )}
       <div>
         <p>{number}</p>
-        <h2>{title}</h2>
+        <h2>{title.replace("შშპს", "შპს")}</h2>
         <p>{address}</p>
         {brand && brand.length > 0 && (
           <section>
             {brand.map(
-              (item) =>
+              (item, index) =>
                 //@ts-ignore
-                icons[item.replace(' ', '_')] && (
+                icons[item.replace(" ", "_")] &&
+                (id === "206316645" && item === "XCMG" ? (
                   <img
                     key={item}
-                    //@ts-ignore
-                    src={icons[item.replace(' ', '_')]}
+                    src={icons['TGTC']}
                     alt={item}
                   />
-                )
+                ) : (
+                  <img
+                    key={item + index}
+                    //@ts-ignore
+                    src={icons[item.replace(" ", "_")]}
+                    alt={item}
+                  />
+                ))
             )}
           </section>
         )}

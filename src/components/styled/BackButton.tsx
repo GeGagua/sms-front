@@ -20,8 +20,14 @@ const BackButtonContainer = styled.div`
   cursor: pointer;
 
   @media (max-width: 992px) {
-    width: 32px;
-    height: 32px;
+    width: 48px;
+    height: 48px;
+    top: -16px;
+
+    svg,
+    img {
+      width: 37px;
+    }
   }
 `;
 

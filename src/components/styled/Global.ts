@@ -44,7 +44,8 @@ export const Title = styled.h1`
 
   @media (max-width: 992px) {
     font-size: 16px;
-    margin: 0 16px 8px 16px;
+    margin: 0 0px 8px 0px;
+    line-height: 20px;
   }
 `;
 
@@ -100,6 +101,13 @@ export const Small = styled.p`
 export const StandardDiv = styled.div`
   width: 100%;
   max-width: 400px;
+
+  @media (max-width: 992px) {
+    max-width: 98vw;
+    min-height: 60vh;
+    padding-top: 10vh;
+    padding-bottom: 14vh;
+  }
 `;
 
 export const Center = styled.div`
@@ -134,6 +142,6 @@ export const CompaniesContainer = styled.div`
 
   @media (max-width: 992px) {
     width: calc(100% - 12px);
-    margin-bottom: 48px;
+    margin-bottom: 80px;
   }
 `;

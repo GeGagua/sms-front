@@ -25,8 +25,13 @@ import TTB from "../../assets/img/TTB.svg";
 import Valtra from "../../assets/img/Valtra.svg";
 import XCMG from "../../assets/img/XCMG.svg";
 import Zetor from "../../assets/img/Zetor.svg";
+import TGTC from '../../assets/img/TGTC.svg'
+import Agri from '../../assets/img/Agri.svg'
+import Equipment from '../../assets/img/Equipment.svg'
 
 export const icons = {
+  Equipment,
+  Agri,
   Bomag,
   FAYAT_Group,
   Fendt,
@@ -52,6 +57,7 @@ export const icons = {
   TTB,
   Tegeta,
   Temsa,
+  TGTC
 };
 
 export const CompanyContainer = styled.div`
@@ -138,10 +144,17 @@ export const CompanyContainer = styled.div`
     flex-wrap: wrap;
 
     img {
-      height: 30px;
+      height: 54px;
       width: auto;
-      max-width: 50px;
+      max-width: 75px;
       object-fit: contain;
+      border-radius: 4px;
+      background: #F7F8F9;
+      padding: 7px;
+    }
+
+    @media (max-width: 377px) {
+      padding-right: 20px;
     }
   }
 

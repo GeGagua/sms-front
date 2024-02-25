@@ -73,6 +73,10 @@ const InputContainer = styled.div`
   &.newCode {
     position: relative;
 
+    input {
+      padding-right: 180px;
+    }
+
     span {
       position: absolute;
       right: 34px;
