@@ -126,10 +126,10 @@ export const CompanyContainer = styled.div`
   }
 
   .custom-checkbox .checkmark:after {
-    left: 8px;
-    top: 4px;
+    left: 10px;
+    top: 5px;
     width: 5px;
-    height: 10px;
+    height: 12px;
     border: solid #fff;
     border-width: 0 3px 3px 0;
     -webkit-transform: rotate(45deg);
@@ -161,6 +161,11 @@ export const CompanyContainer = styled.div`
   @media (max-width: 992px) {
     display: block;
     position: relative;
+
+    & > div > h2,
+    & > div > p {
+      padding-right: 22px;
+    }
 
     img {
       width: 56px;
