@@ -41,8 +41,10 @@ const SMS = () => {
         .then((res) => {
           setId(res.data?.data?._id);
         });
+    } else {
+      navigate('/')
     }
-  }, [phone]);
+  }, [navigate, phone]);
 
   const send = () => {
     if (value && `${value}`.length === 4 && id) {

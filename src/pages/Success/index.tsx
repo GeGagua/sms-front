@@ -19,7 +19,7 @@ const Success = () => {
   useEffect(() => {
     const smsVerify = localStorage.getItem('sms-id')
     if (!smsVerify) {
-      navigate("/sms");
+      navigate("/");
     }
   }, [navigate])
 
