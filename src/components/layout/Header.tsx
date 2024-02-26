@@ -29,13 +29,14 @@ const HeaderContainer = styled.header`
 
 interface IProps {
   hideBack?: boolean
+  back?: boolean
 }
 
-const Header: FC<IProps> = ({ hideBack }) => {
+const Header: FC<IProps> = ({ hideBack, back }) => {
   const navigate = useNavigate();
   return (
     <HeaderContainer>
-      {!hideBack && <BackButton onClick={() => navigate(-1)} />}
+      {!hideBack && <BackButton onClick={() => back ? navigate('/mobile') : navigate(-1)} />}
       <Link to={"/"}>
         <img src={Logo} alt="Tegeta Leasing" />
       </Link>

@@ -95,7 +95,7 @@ const SMS = () => {
   return (
     <TwoPartsContainer>
       <Container>
-        <Header />
+        <Header back />
         <StandardDiv>
           <Title>ტელეფონზე მიღებული კოდი</Title>
           <p>კოდი {phone?.substring(0, 3)}****{phone?.substring(7)}-ზე გამოგიგზავნეთ</p>
