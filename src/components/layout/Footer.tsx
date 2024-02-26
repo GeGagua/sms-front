@@ -29,6 +29,7 @@ const FooterContainer = styled.footer`
 
   section {
     flex: 1;
+    pointer-events: none;
 
     p {
       font-size: 14px;

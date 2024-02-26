@@ -138,6 +138,7 @@ const Input: FC<IProps> = ({
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
         type={type ? type : "number"}
+        inputMode={type ? 'email' : "numeric"}
       />
     </InputContainer>
   );

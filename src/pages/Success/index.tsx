@@ -15,7 +15,7 @@ const SuccessContainer = styled.div`
 const Success = () => {
   return (
     <Center>
-      <Header />
+      <Header hideBack />
       <SuccessContainer>
         <svg
           xmlns="http://www.w3.org/2000/svg"
