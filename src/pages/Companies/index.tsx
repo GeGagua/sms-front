@@ -23,6 +23,10 @@ import avtomotivi from "../../assets/img/avtomotivi.svg";
 import sairme from "../../assets/img/sairme.svg";
 import Rent from "../../assets/img/eurocars.svg";
 
+import Academy from "../../assets/img/academy.svg";
+import Lising from "../../assets/img/lising.svg";
+
+
 const Companies = () => {
   const navigate = useNavigate();
   const [data, setData] = useState<ICompany[]>([]);
@@ -40,6 +44,12 @@ const Companies = () => {
     }
     if (name.includes("გალერი")) {
       return Avtogallery;
+    }
+    if (name.includes("ეგეტა აკადემია")) {
+      return Academy;
+    }
+    if (name.includes("თეგეტა ლიზინგი")) {
+      return Lising;
     }
     if (name.includes("რენთი")) {
       return Rent;
@@ -72,7 +82,6 @@ const Companies = () => {
 
   const updateCompanies = (id: string) => {
     let copyIds = companiesId;
-    console.log(id);
     if (companiesId.includes(id)) {
       copyIds = copyIds.filter((cid) => cid !== id);
     } else {
