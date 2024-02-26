@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import Header from "../../components/layout/Header";
 import { Center, Title } from "../../components/styled/Global";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const SuccessContainer = styled.div`
   margin-bottom: auto;
@@ -13,6 +15,14 @@ const SuccessContainer = styled.div`
 `;
 
 const Success = () => {
+  const navigate = useNavigate();
+  useEffect(() => {
+    const smsVerify = localStorage.getItem('sms-id')
+    if (!smsVerify) {
+      navigate("/sms");
+    }
+  }, [navigate])
+
   return (
     <Center>
       <Header hideBack />

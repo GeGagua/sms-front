@@ -6,6 +6,7 @@ import { Center, Title } from "../../components/styled/Global";
 import { EndContainer, EndContainerBlock, EndContainerBox } from "./styled";
 import axios from "axios";
 import { BackUrl } from "../../const";
+import { useEffect } from "react";
 
 const EndStep1 = () => {
   const id = localStorage.getItem("sms-id");
@@ -21,6 +22,13 @@ const EndStep1 = () => {
         navigate("/success");
       });
   };
+
+  useEffect(() => {
+    const smsVerify = localStorage.getItem('sms-id')
+    if (!smsVerify) {
+      navigate("/sms");
+    }
+  }, [navigate])
 
   return (
     <Center>

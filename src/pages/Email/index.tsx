@@ -10,7 +10,7 @@ import Header from "../../components/layout/Header";
 import Footer from "../../components/layout/Footer";
 import Sidebar from "../../components/layout/Sidebar";
 import Input from "../../components/styled/Input";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Email = () => {
   const navigate = useNavigate();
@@ -20,6 +20,13 @@ const Email = () => {
     localStorage.setItem('sms-email', `${value}`)
     navigate("/companies");
   };
+
+  useEffect(() => {
+    const smsVerify = localStorage.getItem('sms-id')
+    if (!smsVerify) {
+      navigate("/sms");
+    }
+  }, [navigate])
 
   return (
     <TwoPartsContainer>

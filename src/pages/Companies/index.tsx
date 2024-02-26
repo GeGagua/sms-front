@@ -86,6 +86,13 @@ const Companies = () => {
     navigate("/endstep1");
   };
 
+  useEffect(() => {
+    const smsVerify = localStorage.getItem('sms-id')
+    if (!smsVerify) {
+      navigate("/sms");
+    }
+  }, [navigate])
+
   return (
     <TwoPartsContainer>
       <Container>
